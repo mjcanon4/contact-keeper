@@ -34,41 +34,10 @@ router.post(
     try {
       let user = await User.findOne({ email });
 
-      // Handling res if there is no user with that email
       if (!user) {
         return res.status(400).json({ msg: "Invalid Credentials" });
       }
-
-      const isMatch = await bcrypt.compare(password, user.password);
-
-      // Handling if the passwords don't match
-      if (!isMatch) {
-        return res.status(400).json({ msg: "Invalid Credentials" });
-      }
-
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
-
-      // If everything is okay at this point, we are sending the json token
-      jwt.sign(
-        payload,
-        config.get("jwtSecret"),
-        {
-          expiresIn: 360000,
-        },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
-    } catch (err) {
-      // Logging error so the dev can clearly see what is wrong as well as sending error message to be seen in Postman
-      console.log(err.message);
-      res.status(500).send("Server Error");
-    }
+    } catch (error) {}
   }
 );
 

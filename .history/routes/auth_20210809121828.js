@@ -65,7 +65,7 @@ router.post(
         }
       );
     } catch (err) {
-      // Logging error so the dev can clearly see what is wrong as well as sending error message to be seen in Postman
+      // Logging error so the dev can clearly see what is wrong as well as sending the error
       console.log(err.message);
       res.status(500).send("Server Error");
     }

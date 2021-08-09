@@ -29,7 +29,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    // De-constructing name, email and password to use more easily
+    // Deconstucting name, email and password to use more easily
     const { name, email, password } = req.body;
 
     try {
@@ -62,7 +62,6 @@ router.post(
         },
       };
 
-      // If everything is okay at this point, we are sending the json token
       jwt.sign(
         payload,
         config.get("jwtSecret"),
@@ -75,7 +74,6 @@ router.post(
         }
       );
     } catch (err) {
-      // Logging error so the dev can clearly see what is wrong as well as sending error message to be seen in Postman
       console.log(err.message);
       res.status(500).send("Server Error");
     }
