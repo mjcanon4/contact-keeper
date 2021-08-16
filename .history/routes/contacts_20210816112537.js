@@ -76,18 +76,7 @@ router.put("/:id", auth, async (req, res) => {
     if (contact.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: "Not authorized" });
     }
-
-    contact = await Contact.findByIdAndUpdate(
-      req.params.id,
-      { $set: ContactFields },
-      { new: true }
-    );
-
-    res.json(contact);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
+  } catch (err) {}
 });
 
 // @route     DELETE api/contacts/:id
