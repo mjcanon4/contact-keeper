@@ -61,7 +61,7 @@ router.put("/:id", auth, async (req, res) => {
   const { name, email, phone, type } = req.body;
 
   // Build contact object
-  const contactFields = {};
+  const ContactFields = {};
   if (name) contactFields.name = name;
   if (email) contactFields.email = email;
   if (phone) contactFields.phone = phone;
@@ -79,7 +79,7 @@ router.put("/:id", auth, async (req, res) => {
 
     contact = await Contact.findByIdAndUpdate(
       req.params.id,
-      { $set: contactFields },
+      { $set: ContactFields },
       { new: true }
     );
 

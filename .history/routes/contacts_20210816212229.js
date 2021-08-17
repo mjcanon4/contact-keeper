@@ -79,7 +79,7 @@ router.put("/:id", auth, async (req, res) => {
 
     contact = await Contact.findByIdAndUpdate(
       req.params.id,
-      { $set: contactFields },
+      { $set: ContactFields },
       { new: true }
     );
 

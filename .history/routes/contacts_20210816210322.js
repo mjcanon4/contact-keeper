@@ -68,7 +68,7 @@ router.put("/:id", auth, async (req, res) => {
   if (type) contactFields.type = type;
 
   try {
-    let contact = await Contact.findById(req.params.id);
+    let contact = await Contact.findById(rew.params.id);
 
     if (!contact) return res.status(404).json({ msg: "Contact not found" });
 
@@ -79,7 +79,7 @@ router.put("/:id", auth, async (req, res) => {
 
     contact = await Contact.findByIdAndUpdate(
       req.params.id,
-      { $set: contactFields },
+      { $set: ContactFields },
       { new: true }
     );
 
@@ -95,7 +95,7 @@ router.put("/:id", auth, async (req, res) => {
 // @access    Private
 router.delete("/:id", auth, async (req, res) => {
   try {
-    let contact = await Contact.findById(req.params.id);
+    let contact = await Contact.findById(rew.params.id);
 
     if (!contact) return res.status(404).json({ msg: "Contact not found" });
 
