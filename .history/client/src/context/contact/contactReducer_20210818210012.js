@@ -13,7 +13,7 @@ export default (state, action) => {
     case ADD_CONTACT:
       return {
         ...state,
-        contact: [action.payload, ...state.contacts],
+        contact: [...state.contacts, action.payload],
       };
     default:
       return state;
