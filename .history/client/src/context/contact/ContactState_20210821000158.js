@@ -1,7 +1,6 @@
 import React, { useReducer } from "react";
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
-import { v4 as uuidv4 } from "uuid";
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
@@ -29,13 +28,6 @@ const ContactState = (props) => {
         email: "darthvader@email.com",
         phone: "333-333-3333",
       },
-      {
-        type: "personal",
-        id: "3",
-        name: "Kylo Ren",
-        email: "darthvaderisthebest69@gmail.com",
-        phone: "345-245-1249",
-      },
     ],
   };
 
@@ -43,7 +35,6 @@ const ContactState = (props) => {
 
   // ADD CONTACT
   const addContact = (contact) => {
-    contact.id = uuidv4();
     dispatch({ type: ADD_CONTACT, payload: contact });
     console.log(contact);
   };
