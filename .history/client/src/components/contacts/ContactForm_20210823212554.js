@@ -4,7 +4,7 @@ import ContactContext from "../../context/contact/contactContext";
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
 
-  const { addContact, clearCurrent, updateContact, current } = contactContext;
+  const { addContact, clearCurrent, updateContact current } = contactContext;
 
   useEffect(() => {
     if (current !== null) {
@@ -36,8 +36,8 @@ const ContactForm = () => {
     if (current === null) {
       addContact(contact);
     } else {
-      updateContact(contact);
     }
+    contactContext.addContact(contact);
     setContact({ name: "", email: "", phone: "", type: "personal" });
   };
 
