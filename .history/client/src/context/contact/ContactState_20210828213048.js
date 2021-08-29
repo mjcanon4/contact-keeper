@@ -8,7 +8,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_CONTACT,
-  FILTER_CONTACTS,
+  FILTER_CONTACT,
   CLEAR_FILTER,
 } from "../types";
 
@@ -72,7 +72,7 @@ const ContactState = (props) => {
 
   // FILTER CONTACTS
   const filterContacts = (text) => {
-    dispatch({ type: FILTER_CONTACTS, payload: text });
+    dispatch({ type: FILTER_CONTACT, payload: text });
   };
   // CLEAR FILTER
   const clearFilter = () => {
@@ -84,14 +84,11 @@ const ContactState = (props) => {
       value={{
         contacts: state.contacts,
         current: state.current,
-        filtered: state.filtered,
         addContact,
         deleteContact,
         setCurrent,
         clearCurrent,
         updateContact,
-        filterContacts,
-        clearFilter,
       }}
     >
       {props.children}

@@ -4,7 +4,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_CONTACT,
-  FILTER_CONTACTS,
+  FILTER_CONTACT,
   CLEAR_FILTER,
 } from "../types";
 
@@ -46,11 +46,6 @@ export default (state, action) => {
           const regex = new RegExp(`${action.payload}`, "gi");
           return contact.name.match(regex) || contact.email.match(regex);
         }),
-      };
-    case CLEAR_FILTER:
-      return {
-        ...state,
-        filtered: null,
       };
     default:
       return state;
