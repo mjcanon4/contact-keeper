@@ -48,7 +48,7 @@ const Register = () => {
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
           <input
-            type="email"
+            type="text"
             name="email"
             value={email}
             onChange={onChange}

@@ -48,7 +48,7 @@ const Register = () => {
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
           <input
-            type="email"
+            type="text"
             name="email"
             value={email}
             onChange={onChange}
@@ -63,7 +63,6 @@ const Register = () => {
             value={password}
             onChange={onChange}
             required
-            minLength="6"
           />
         </div>
         <div className="form-group">
@@ -74,7 +73,6 @@ const Register = () => {
             value={password2}
             onChange={onChange}
             required
-            minLength="6"
           />
         </div>
         <input
