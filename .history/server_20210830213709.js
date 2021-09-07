@@ -4,7 +4,6 @@ const cors = require("cors");
 
 const app = express();
 
-// Initialize CORS
 app.use(
   cors({
     credentials: true,

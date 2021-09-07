@@ -7,15 +7,7 @@ const Register = () => {
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { register, error, clearErrors } = authContext;
-
-  useEffect(() => {
-    if (error === "User already exists") {
-      setAlert(error, "danger");
-      clearErrors();
-    }
-    // eslint-disable-next-line
-  }, [error]);
+  const { register, error } = authContext;
 
   const [user, setUser] = useState({
     name: "",

@@ -26,9 +26,7 @@ const AuthState = (props) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Load User
-  const loadUser = () => {
-    console.log("hi");
-  };
+  const loadUser = () => {};
 
   // Register User
   const register = async (formData) => {
@@ -51,24 +49,15 @@ const AuthState = (props) => {
   };
 
   // Login User
-  const login = () => {};
 
   // Logout User
-  const logout = () => {};
 
   // Clear Errors
-  const clearErrors = () => {
-    dispatch({ type: CLEAR_ERRORS });
-  };
 
   return (
     <AuthContext.Provider
       value={{
-        loadUser,
         register,
-        login,
-        logout,
-        clearErrors,
         token: state.token,
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,

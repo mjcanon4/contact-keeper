@@ -12,10 +12,8 @@ const Register = () => {
   useEffect(() => {
     if (error === "User already exists") {
       setAlert(error, "danger");
-      clearErrors();
     }
-    // eslint-disable-next-line
-  }, [error]);
+  });
 
   const [user, setUser] = useState({
     name: "",

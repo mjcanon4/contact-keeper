@@ -54,21 +54,22 @@ const AuthState = (props) => {
   const login = () => {};
 
   // Logout User
-  const logout = () => {};
+  const logout = () => {
+
+  }
 
   // Clear Errors
   const clearErrors = () => {
-    dispatch({ type: CLEAR_ERRORS });
-  };
+
+  }
+
+
 
   return (
     <AuthContext.Provider
       value={{
-        loadUser,
         register,
-        login,
-        logout,
-        clearErrors,
+        login, logout, clearErrors
         token: state.token,
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,

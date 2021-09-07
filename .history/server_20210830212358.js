@@ -4,13 +4,7 @@ const cors = require("cors");
 
 const app = express();
 
-// Initialize CORS
-app.use(
-  cors({
-    credentials: true,
-    origin: [`http://localhost:${PORT}`],
-  })
-);
+app.use(cors());
 
 // Connect Database
 connectDB();
